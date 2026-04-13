@@ -38,7 +38,7 @@ const Contact = () => {
   };
 
   const contactInfo = [
-    { icon: <FaEnvelope />, label: 'vzz620201@gmail.com', href: 'mailto:vzz620201@gmail.com' },
+    { icon: <FaEnvelope />, label: 'vijaybyadwal589@gmail.com', href: 'mailto:vijaybyadwal589@gmail.com' },
     { icon: <FaPhone />, label: '+91 7878118474', href: 'tel:+917878118474' },
     { icon: <FaMapMarkerAlt />, label: 'Jaipur, Rajasthan', href: null },
   ];

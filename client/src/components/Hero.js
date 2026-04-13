@@ -71,7 +71,7 @@ const Hero = () => {
           <a href="https://www.linkedin.com/in/vijay-meena-a4b953292" target="_blank" rel="noreferrer" className="hero__social-link" aria-label="LinkedIn">
             <FaLinkedin />
           </a>
-          <a href="mailto:vzz620201@gmail.com" className="hero__social-link" aria-label="Email">
+          <a href="mailto:vijaybyadwal589@gmail.com" className="hero__social-link" aria-label="Email">
             <FaEnvelope />
           </a>
         </motion.div>

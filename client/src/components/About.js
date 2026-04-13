@@ -7,7 +7,7 @@ const highlights = [
   { icon: <FaBrain />, title: 'AI / ML', desc: 'End-to-end ML pipelines & NLP' },
   { icon: <FaServer />, title: 'RAG Systems', desc: 'Vector search & semantic retrieval' },
   { icon: <FaShieldAlt />, title: 'Privacy AI', desc: 'PII detection & redaction' },
-  { icon: <FaCode />, title: '850+ Problems', desc: 'LeetCode, Codeforces & CodeChef' },
+  { icon: <FaCode />, title: '900+ Problems', desc: 'LeetCode, Codeforces & CodeChef' },
 ];
 
 const About = () => {

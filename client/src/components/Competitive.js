@@ -7,7 +7,7 @@ const platforms = [
   {
     name: 'LeetCode',
     icon: <SiLeetcode />,
-    count: '350+',
+    count: '421+',
     detail: 'Problems Solved',
     color: '#ffa116',
     bg: 'rgba(255,161,22,0.1)',
@@ -16,7 +16,7 @@ const platforms = [
     name: 'Codeforces',
     icon: <SiCodeforces />,
     count: '250+',
-    detail: 'Problems Solved',
+    detail: 'Pupil Rated',
     color: '#1f8acb',
     bg: 'rgba(31,138,203,0.1)',
   },
@@ -91,7 +91,7 @@ const Competitive = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.8, duration: 0.5 }}
         >
-          <span className="competitive__total-number gradient-text">850+</span>
+          <span className="competitive__total-number gradient-text">900+</span>
           <span>Total Problems Solved</span>
         </motion.div>
       </motion.div>
