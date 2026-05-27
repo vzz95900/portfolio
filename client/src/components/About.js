@@ -7,7 +7,7 @@ const highlights = [
   { icon: <FaBrain />, title: 'AI / ML', desc: 'End-to-end ML pipelines & NLP' },
   { icon: <FaServer />, title: 'RAG Systems', desc: 'Vector search & semantic retrieval' },
   { icon: <FaShieldAlt />, title: 'Privacy AI', desc: 'PII detection & redaction' },
-  { icon: <FaCode />, title: '900+ Problems', desc: 'LeetCode, Codeforces & CodeChef' },
+  { icon: <FaCode />, title: '1000+ Problems', desc: 'LeetCode, Codeforces & CodeChef' },
 ];
 
 const About = () => {
@@ -36,10 +36,11 @@ const About = () => {
         </motion.h2>
 
         <motion.p className="about__text" variants={itemVariants}>
-          I'm an undergraduate Computer Science student at <strong>IIIT Kota</strong> with a strong 
-          interest in AI/ML and systems development. I have experience building end-to-end ML pipelines, 
-          RAG architectures, and privacy-preserving LLM applications. I'm passionate about solving 
-          real-world problems through scalable, efficient, and production-ready solutions.
+          I'm a CS undergraduate at <strong>IIIT Kota (2023–2027)</strong> with hands-on experience 
+          building end-to-end AI/ML systems, LLM pipelines, Generative AI applications, and 
+          <strong> Agentic AI</strong> workflows with autonomous reasoning and tool use. Proficient in Python, 
+          PyTorch, LangChain, FastAPI, and NLP. Delivered production-grade projects spanning RAG architectures, 
+          privacy-preserving ML, and hallucination mitigation.
         </motion.p>
 
         <motion.div className="about__highlights" variants={containerVariants}>
@@ -48,7 +49,7 @@ const About = () => {
               key={i}
               className="about__card"
               variants={itemVariants}
-              whileHover={{ y: -8, boxShadow: '0 12px 40px rgba(99,102,241,0.2)' }}
+              whileHover={{ y: -8, boxShadow: '0 12px 40px rgba(255,255,255,0.05)' }}
             >
               <div className="about__card-icon">{item.icon}</div>
               <h3>{item.title}</h3>

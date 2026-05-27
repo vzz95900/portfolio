@@ -15,19 +15,31 @@ const projectsData = [
       'Integrated OCR-based redaction for scanned PDFs and images using Tesseract and PaddleOCR with automatic response token restoration.',
       'Achieved ~92% reduction in privacy leakage risk on evaluation datasets with automated CI/CD benchmarking.',
     ],
-    gradient: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
+    gradient: 'linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%)',
   },
   {
     title: 'Context-Aware RAG Engine',
-    subtitle: 'Hybrid Retrieval-Augmented Generation System',
+    subtitle: 'Multi-Objective Semantic Document Q&A',
     github: 'https://github.com/vzz95900/ContextRag.git',
-    tags: ['FastAPI', 'ChromaDB', 'BM25', 'Streamlit', 'LangChain', 'OCR'],
+    tags: ['FastAPI', 'ChromaDB', 'BM25', 'Cross-Encoder', 'Multi-Objective Optimization', 'Gemini', 'Groq', 'HuggingFace'],
     points: [
-      'Built hybrid RAG system combining vector search, BM25 retrieval, and cross-encoder reranking for high-accuracy semantic Q&A over PDFs.',
-      'Reduced hallucinations by ~70% using strict context-only grounding and token-aware chunking with provenance tracking.',
-      'Deployed scalable FastAPI + ChromaDB backend with Streamlit chatbot UI supporting OCR fallback and multi-provider LLMs.',
+      'Formulated retrieval as a multi-objective subset-selection problem optimising relevance, evidence coverage, and inter-document support via greedy selection, achieving 82.1% faithfulness (+13.6% over Top-K baseline).',
+      'Engineered a rigorous evaluation framework with 4 baseline comparisons (Top-K, Hybrid/RRF, MMR), weight sensitivity ablation studies, and LLM-as-judge faithfulness scoring.',
+      'Deployed a production-ready FastAPI backend with Glassmorphism SPA frontend, persistent chat history, Vision-based OCR fallback, and a unified plug-in interface supporting 5 LLM providers.',
     ],
-    gradient: 'linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%)',
+    gradient: 'linear-gradient(135deg, #1f1f1f 0%, #333333 100%)',
+  },
+  {
+    title: 'CodeCrak AI',
+    subtitle: 'Intelligent Code Review & Bug Detection Agent',
+    github: 'https://github.com/vzz95900/CodeCrak.git',
+    tags: ['FastAPI', 'Tree-sitter', 'Pygments', 'Gemini', 'OpenAI', 'Groq', 'SSE Streaming', 'SQLite'],
+    points: [
+      'Built an AST-aware static analysis engine using Tree-sitter to detect security vulnerabilities, anti-patterns, and code smells across 5 languages (Python, JS/TS, Java, C++) with deterministic pattern matching.',
+      'Designed a layered review pipeline combining local AST analysis with LLM semantic review (Gemini/OpenAI/Groq auto-fallback), classifying issues into 5 categories × 4 severity levels.',
+      'Deployed a FastAPI backend with SSE real-time streaming, GitHub PR integration, Pygments syntax highlighting, report export, and a premium Glassmorphism SPA with Chart.js dashboards.',
+    ],
+    gradient: 'linear-gradient(135deg, #171717 0%, #262626 100%)',
   },
 ];
 

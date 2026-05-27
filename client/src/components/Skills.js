@@ -6,32 +6,32 @@ const skillCategories = [
   {
     title: 'Languages',
     skills: ['Python', 'C++', 'Java', 'C'],
-    color: '#6366f1',
+    color: '#d4d4d4',
   },
   {
     title: 'Machine Learning',
     skills: ['Regression', 'Classification', 'Clustering', 'Feature Engineering', 'Model Evaluation', 'NLP Fundamentals'],
-    color: '#8b5cf6',
+    color: '#a3a3a3',
   },
   {
     title: 'Generative AI',
     skills: ['LLMs', 'RAG', 'LangChain', 'Prompt Engineering', 'Embeddings', 'Vector Databases', 'Fine-tuning', 'HuggingFace Transformers'],
-    color: '#a78bfa',
+    color: '#e5e5e5',
   },
   {
     title: 'Libraries / Frameworks',
-    skills: ['NumPy', 'Pandas', 'Matplotlib', 'scikit-learn', 'PyTorch', 'spaCy', 'OpenCV', 'FastAPI', 'PaddleOCR'],
-    color: '#c084fc',
+    skills: ['NumPy', 'Pandas', 'Matplotlib', 'scikit-learn', 'PyTorch', 'spaCy', 'OpenCV', 'FastAPI', 'Streamlit', 'PaddleOCR'],
+    color: '#c0c0c0',
   },
   {
     title: 'Databases',
-    skills: ['SQL', 'FAISS', 'ChromaDB'],
-    color: '#818cf8',
+    skills: ['SQL', 'FAISS', 'ChromaDB', 'BM25', 'Vector Search'],
+    color: '#b0b0b0',
   },
   {
     title: 'Developer Tools',
-    skills: ['Git', 'GitHub', 'VS Code', 'Jupyter Notebook', 'Google Colab', 'Kaggle'],
-    color: '#6366f1',
+    skills: ['Git', 'GitHub', 'CI/CD', 'REST APIs', 'VS Code', 'Jupyter Notebook', 'Google Colab', 'Kaggle', 'Linux'],
+    color: '#d4d4d4',
   },
 ];
 

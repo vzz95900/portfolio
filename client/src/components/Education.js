@@ -60,7 +60,7 @@ const Education = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={inView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ delay: 0.4 + i * 0.1, duration: 0.4 }}
-                whileHover={{ scale: 1.08, backgroundColor: 'rgba(99,102,241,0.2)' }}
+                whileHover={{ scale: 1.08, backgroundColor: 'rgba(255,255,255,0.08)' }}
               >
                 {course}
               </motion.span>

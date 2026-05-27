@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import { Link } from 'react-scroll';
-import { FaGithub, FaLinkedin, FaEnvelope, FaChevronDown } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaChevronDown, FaFileDownload } from 'react-icons/fa';
 
 const Hero = () => {
   return (
@@ -36,7 +36,7 @@ const Hero = () => {
             sequence={[
               'AI/ML Enthusiast',
               2000,
-              'Full-Stack Developer',
+              'Agentic AI Developer',
               2000,
               'Competitive Programmer',
               2000,
@@ -56,7 +56,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1 }}
         >
-          CS Undergrad at IIIT Kota &bull; Building intelligent, scalable solutions
+          CS Undergrad at IIIT Kota &bull; Building Agentic AI workflows & production-grade ML systems
         </motion.p>
 
         <motion.div
@@ -85,6 +85,9 @@ const Hero = () => {
           <Link to="projects" smooth duration={500} offset={-70}>
             <button className="btn btn--primary">View Projects</button>
           </Link>
+          <a href="https://drive.google.com/file/d/1oXrOliAIAr93gWW62QOHpiEnV3cV5hlE/view?usp=sharing" target="_blank" rel="noreferrer">
+            <button className="btn btn--outline"><FaFileDownload /> Resume</button>
+          </a>
           <Link to="contact" smooth duration={500} offset={-70}>
             <button className="btn btn--outline">Get In Touch</button>
           </Link>
