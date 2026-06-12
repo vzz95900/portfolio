@@ -4,33 +4,38 @@ import { useInView } from 'react-intersection-observer';
 
 const skillCategories = [
   {
-    title: 'Languages',
-    skills: ['Python', 'C++', 'Java', 'C'],
+    title: 'Programming Languages',
+    skills: ['Python', 'C++', 'SQL', 'Java', 'C'],
     color: '#d4d4d4',
   },
   {
-    title: 'Machine Learning',
-    skills: ['Regression', 'Classification', 'Clustering', 'Feature Engineering', 'Model Evaluation', 'NLP Fundamentals'],
+    title: 'Machine Learning & AI',
+    skills: ['Supervised Learning', 'Unsupervised Learning', 'NLP', 'Feature Engineering', 'Model Evaluation', 'Hyperparameter Tuning'],
     color: '#a3a3a3',
   },
   {
-    title: 'Generative AI',
-    skills: ['LLMs', 'RAG', 'LangChain', 'Prompt Engineering', 'Embeddings', 'Vector Databases', 'Fine-tuning', 'HuggingFace Transformers'],
+    title: 'Generative AI & LLMs',
+    skills: ['RAG', 'LangChain', 'LangGraph', 'Hugging Face Transformers', 'Text Embeddings', 'Fine-tuning', 'Prompt Engineering', 'Ollama'],
     color: '#e5e5e5',
   },
   {
-    title: 'Libraries / Frameworks',
-    skills: ['NumPy', 'Pandas', 'Matplotlib', 'scikit-learn', 'PyTorch', 'spaCy', 'OpenCV', 'FastAPI', 'Streamlit', 'PaddleOCR'],
+    title: 'Frameworks & Libraries',
+    skills: ['PyTorch', 'TensorFlow', 'scikit-learn', 'FastAPI', 'spaCy', 'NumPy', 'Pandas', 'Matplotlib', 'Seaborn'],
     color: '#c0c0c0',
   },
   {
-    title: 'Databases',
-    skills: ['SQL', 'FAISS', 'ChromaDB', 'BM25', 'Vector Search'],
+    title: 'Databases & Vector Stores',
+    skills: ['MySQL', 'PostgreSQL', 'ChromaDB', 'FAISS'],
     color: '#b0b0b0',
   },
   {
-    title: 'Developer Tools',
-    skills: ['Git', 'GitHub', 'CI/CD', 'REST APIs', 'VS Code', 'Jupyter Notebook', 'Google Colab', 'Kaggle', 'Linux'],
+    title: 'Search & Retrieval',
+    skills: ['BM25', 'Vector Search', 'Hybrid Search', 'Cross-Encoder Reranking'],
+    color: '#a3a3a3',
+  },
+  {
+    title: 'Tools & Platforms',
+    skills: ['Git', 'GitHub', 'Linux', 'VS Code', 'Jupyter Notebook', 'Google Colab', 'Kaggle'],
     color: '#d4d4d4',
   },
 ];

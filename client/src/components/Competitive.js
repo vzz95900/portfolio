@@ -15,16 +15,16 @@ const platforms = [
   {
     name: 'Codeforces',
     icon: <SiCodeforces />,
-    count: '250+',
-    detail: 'Specialist Rated',
+    count: 'Specialist',
+    detail: 'Max Rating: 1421',
     color: '#1f8acb',
     bg: 'rgba(31,138,203,0.1)',
   },
   {
     name: 'CodeChef',
     icon: <SiCodechef />,
-    count: '250+',
-    detail: '3-Star Rated',
+    count: '3-Star',
+    detail: 'Max Rating: 1618',
     color: '#5b4638',
     bg: 'rgba(91,70,56,0.15)',
   },
@@ -47,7 +47,7 @@ const Competitive = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          Competitive <span className="gradient-text">Programming</span>
+          Achievements & <span className="gradient-text">Certifications</span>
         </motion.h2>
 
         <motion.p
@@ -93,6 +93,27 @@ const Competitive = () => {
         >
           <span className="competitive__total-number gradient-text">1000+</span>
           <span>Total Problems Solved</span>
+        </motion.div>
+
+        <motion.div
+          className="competitive__certifications"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 1, duration: 0.5 }}
+          style={{ marginTop: '60px', textAlign: 'left', maxWidth: '800px', margin: '60px auto 0' }}
+        >
+          <ul style={{ listStyleType: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
+            <li style={{ background: 'rgba(255,255,255,0.03)', padding: '24px', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
+              <h4 style={{ fontSize: '1.1rem', marginBottom: '8px', color: 'var(--accent-light)' }}>Deloitte Australia Data Analytics Job Simulation (Forage, 2025)</h4>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>Completed the job simulation, gaining experience in data analysis, forensic technology, and dashboard reporting.</p>
+              <a href="https://drive.google.com/file/d/1vE9YLeTngRKo3CffulevKbPThBFMw9yY/view?usp=sharing" target="_blank" rel="noreferrer" style={{ display: 'inline-block', marginTop: '12px', fontSize: '0.85rem', color: 'var(--accent-light)', textDecoration: 'underline' }}>View Certificate</a>
+            </li>
+            <li style={{ background: 'rgba(255,255,255,0.03)', padding: '24px', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
+              <h4 style={{ fontSize: '1.1rem', marginBottom: '8px', color: 'var(--accent-light)' }}>Supervised Machine Learning: Regression and Classification</h4>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>Completed the course by DeepLearning.AI & Stanford University (Coursera, 2026).</p>
+              <a href="https://drive.google.com/file/d/1CDRd69E831UaA_Zqe76I3hj3BkXSehPM/view?usp=sharing" target="_blank" rel="noreferrer" style={{ display: 'inline-block', marginTop: '12px', fontSize: '0.85rem', color: 'var(--accent-light)', textDecoration: 'underline' }}>View Certificate</a>
+            </li>
+          </ul>
         </motion.div>
       </motion.div>
     </section>

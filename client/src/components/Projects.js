@@ -1,43 +1,45 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const projectsData = [
   {
     title: 'SecureFlow AI',
     subtitle: 'Privacy-Preserving LLM Chrome Extension',
-    github: 'https://github.com/vzz95900/SecureFlow-AI-Extension.git',
-    tags: ['spaCy', 'BERT', 'Tesseract', 'PaddleOCR', 'Chrome Extension', 'NLP'],
+    link: 'https://github.com/vzz95900/SecureFlow-AI-Extension.git',
+    linkText: 'Source Code',
+    tags: ['Python', 'spaCy', 'BERT', 'Tesseract OCR', 'PaddleOCR', 'Chrome APIs', 'CI/CD'],
     points: [
-      'Developed a Chrome extension that detects and sanitizes PII, PHI, and financial data in real time before LLM API calls.',
-      'Designed a multi-layer NLP pipeline using spaCy NER, regex heuristics, and fine-tuned BERT for entity-level risk scoring (High/Medium/Low).',
-      'Integrated OCR-based redaction for scanned PDFs and images using Tesseract and PaddleOCR with automatic response token restoration.',
-      'Achieved ~92% reduction in privacy leakage risk on evaluation datasets with automated CI/CD benchmarking.',
+      'Built a Chrome extension that automatically detects and redacts PII, PHI, and financial information before LLM API requests; achieved 99.4% precision and 96.9% recall on a labeled evaluation set spanning 15 India-specific entity types.',
+      'Designed a multi-stage NLP pipeline combining spaCy NER, 21 regex patterns, and a fine-tuned BERT classifier to perform entity detection and risk classification (High / Medium / Low).',
+      'Integrated OCR-based redaction for scanned PDFs and images using Tesseract OCR and PaddleOCR, with automatic token restoration and CI/CD-based benchmarking for regression testing.',
     ],
     gradient: 'linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%)',
   },
   {
-    title: 'Context-Aware RAG Engine',
-    subtitle: 'Multi-Objective Semantic Document Q&A',
-    github: 'https://github.com/vzz95900/ContextRag.git',
-    tags: ['FastAPI', 'ChromaDB', 'BM25', 'Cross-Encoder', 'Multi-Objective Optimization', 'Gemini', 'Groq', 'HuggingFace'],
+    title: 'Context-Aware AI ChatBot',
+    subtitle: 'RAG System with Cross-Encoder Reranking',
+    link: 'https://github.com/vzz95900/ContextRag.git',
+    linkText: 'Source Code',
+    tags: ['Python', 'FastAPI', 'ChromaDB', 'Cross-Encoder Reranking', 'Gemini', 'Groq', 'Ollama'],
     points: [
-      'Formulated retrieval as a multi-objective subset-selection problem optimising relevance, evidence coverage, and inter-document support via greedy selection, achieving 82.1% faithfulness (+13.6% over Top-K baseline).',
-      'Engineered a rigorous evaluation framework with 4 baseline comparisons (Top-K, Hybrid/RRF, MMR), weight sensitivity ablation studies, and LLM-as-judge faithfulness scoring.',
-      'Deployed a production-ready FastAPI backend with Glassmorphism SPA frontend, persistent chat history, Vision-based OCR fallback, and a unified plug-in interface supporting 5 LLM providers.',
+      'Developed a Retrieval-Augmented Generation (RAG) system using ChromaDB and cross-encoder reranking to retrieve relevant, non-redundant context and reduce hallucinated responses.',
+      'Improved answer faithfulness by 13.6% over a baseline vector-search pipeline using document cross-validation, reranking, and redundancy-aware retrieval.',
+      'Built a FastAPI backend with persistent chat memory, OCR-based document processing, and plug-and-play support for multiple LLM providers including Gemini, Groq, and Ollama.',
     ],
     gradient: 'linear-gradient(135deg, #1f1f1f 0%, #333333 100%)',
   },
   {
-    title: 'CodeCrak AI',
-    subtitle: 'Intelligent Code Review & Bug Detection Agent',
-    github: 'https://github.com/vzz95900/CodeCrak.git',
-    tags: ['FastAPI', 'Tree-sitter', 'Pygments', 'Gemini', 'OpenAI', 'Groq', 'SSE Streaming', 'SQLite'],
+    title: 'Customer Churn Prediction Model',
+    subtitle: 'End-to-end Machine Learning Pipeline',
+    link: 'https://www.kaggle.com/code/vizzzop/churnpred',
+    linkText: 'View on Kaggle',
+    tags: ['Python', 'scikit-learn', 'Gradient Boosting', 'SMOTE', 'Pandas', 'Seaborn'],
     points: [
-      'Built an AST-aware static analysis engine using Tree-sitter to detect security vulnerabilities, anti-patterns, and code smells across 5 languages (Python, JS/TS, Java, C++) with deterministic pattern matching.',
-      'Designed a layered review pipeline combining local AST analysis with LLM semantic review (Gemini/OpenAI/Groq auto-fallback), classifying issues into 5 categories × 4 severity levels.',
-      'Deployed a FastAPI backend with SSE real-time streaming, GitHub PR integration, Pygments syntax highlighting, report export, and a premium Glassmorphism SPA with Chart.js dashboards.',
+      'Compared Logistic Regression, Decision Tree, Random Forest, and Gradient Boosting models using 5-fold stratified cross-validation on the Blastchar Telco dataset (7,043 customers); Gradient Boosting achieved AUC-ROC 0.83 and 71.7% churn recall.',
+      'Engineered six domain-specific features including Customer Lifetime Value (CLV) and Charge-Per-Tenure; applied SMOTE, threshold tuning, Mutual Information, and Recursive Feature Elimination (RFE) for feature selection.',
+      'Built an end-to-end machine learning pipeline covering data preprocessing, feature engineering, model selection, hyperparameter tuning, and performance evaluation.',
     ],
     gradient: 'linear-gradient(135deg, #171717 0%, #262626 100%)',
   },
@@ -99,8 +101,8 @@ const Projects = () => {
                 </ul>
 
                 <div className="project-card__links">
-                  <a href={project.github} target="_blank" rel="noreferrer" className="project-card__link">
-                    <FaGithub /> Source Code
+                  <a href={project.link} target="_blank" rel="noreferrer" className="project-card__link">
+                    {project.link.includes('github.com') ? <FaGithub /> : <FaExternalLinkAlt />} {project.linkText}
                   </a>
                 </div>
               </div>

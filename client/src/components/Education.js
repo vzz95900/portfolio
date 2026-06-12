@@ -19,10 +19,11 @@ const Education = () => {
   const courses = [
     'Data Structures & Algorithms',
     'Operating Systems',
-    'Database Management Systems',
+    'DBMS',
     'Computer Networks',
     'Software Engineering',
-    'Object-Oriented System Design',
+    'OOP',
+    'Discrete Mathematics',
   ];
 
   return (
