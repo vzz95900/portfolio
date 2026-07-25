@@ -9,6 +9,11 @@ const skillCategories = [
     color: '#d4d4d4',
   },
   {
+    title: 'Core CS',
+    skills: ['Data Structures & Algorithms', 'Object-Oriented Programming', 'System Design Fundamentals', 'Operating Systems', 'DBMS', 'Computer Networks'],
+    color: '#c0c0c0',
+  },
+  {
     title: 'Machine Learning & AI',
     skills: ['Supervised Learning', 'Unsupervised Learning', 'NLP', 'Feature Engineering', 'Model Evaluation', 'Hyperparameter Tuning'],
     color: '#a3a3a3',
@@ -20,7 +25,7 @@ const skillCategories = [
   },
   {
     title: 'Frameworks & Libraries',
-    skills: ['PyTorch', 'TensorFlow', 'scikit-learn', 'FastAPI', 'spaCy', 'NumPy', 'Pandas', 'Matplotlib', 'Seaborn'],
+    skills: ['scikit-learn', 'FastAPI', 'spaCy', 'NumPy', 'Pandas', 'Matplotlib', 'Seaborn'],
     color: '#c0c0c0',
   },
   {

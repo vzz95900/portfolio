@@ -5,7 +5,7 @@ import { FaBrain, FaServer, FaShieldAlt, FaCode } from 'react-icons/fa';
 
 const highlights = [
   { icon: <FaBrain />, title: 'AI / ML', desc: 'End-to-end ML pipelines & NLP' },
-  { icon: <FaServer />, title: 'RAG Systems', desc: 'Vector search & semantic retrieval' },
+  { icon: <FaServer />, title: 'Backend & APIs', desc: 'Scalable systems & RESTful APIs' },
   { icon: <FaShieldAlt />, title: 'Privacy AI', desc: 'PII detection & redaction' },
   { icon: <FaCode />, title: '1000+ Problems', desc: 'LeetCode, Codeforces & CodeChef' },
 ];
@@ -36,11 +36,10 @@ const About = () => {
         </motion.h2>
 
         <motion.p className="about__text" variants={itemVariants}>
-          I'm a CS undergraduate at <strong>IIIT Kota (2023–2027)</strong> with hands-on experience 
-          building end-to-end AI/ML systems, LLM pipelines, Generative AI applications, and 
-          <strong> Agentic AI</strong> workflows with autonomous reasoning and tool use. Proficient in Python, 
-          PyTorch, LangChain, FastAPI, and NLP. Delivered production-grade projects spanning RAG architectures, 
-          privacy-preserving ML, and hallucination mitigation.
+          I'm a Computer Science undergraduate at <strong>IIIT Kota (2023–2027)</strong> with strong 
+          foundations in Data Structures &amp; Algorithms and Object-Oriented Design, and hands-on experience 
+          building <strong>scalable backend systems</strong>, <strong>RESTful APIs</strong>, and end-to-end 
+          <strong>Machine Learning / RAG applications</strong> in Python and C++.
         </motion.p>
 
         <motion.div className="about__highlights" variants={containerVariants}>

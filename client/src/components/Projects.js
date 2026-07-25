@@ -9,7 +9,7 @@ const projectsData = [
     subtitle: 'Privacy-Preserving LLM Chrome Extension',
     link: 'https://github.com/vzz95900/SecureFlow-AI-Extension.git',
     linkText: 'Source Code',
-    tags: ['Python', 'spaCy', 'BERT', 'Tesseract OCR', 'PaddleOCR', 'Chrome APIs', 'CI/CD'],
+    tags: ['Python', 'spaCy', 'BERT', 'Deep Learning', 'Tesseract OCR', 'PaddleOCR', 'Chrome APIs', 'CI/CD'],
     points: [
       'Built a Chrome extension that automatically detects and redacts PII, PHI, and financial information before LLM API requests; achieved 99.4% precision and 96.9% recall on a labeled evaluation set spanning 15 India-specific entity types.',
       'Designed a multi-stage NLP pipeline combining spaCy NER, 21 regex patterns, and a fine-tuned BERT classifier to perform entity detection and risk classification (High / Medium / Low).',
@@ -19,14 +19,15 @@ const projectsData = [
   },
   {
     title: 'Context-Aware AI ChatBot',
-    subtitle: 'RAG System with Cross-Encoder Reranking',
+    subtitle: 'RAG System with Adaptive Neural Weight Predictor',
     link: 'https://github.com/vzz95900/ContextRag.git',
+    liveDemo: 'https://vizz17-context-aware-rag.hf.space',
     linkText: 'Source Code',
-    tags: ['Python', 'FastAPI', 'ChromaDB', 'Cross-Encoder Reranking', 'Gemini', 'Groq', 'Ollama'],
+    tags: ['Python', 'FastAPI', 'ChromaDB', 'BM25', 'Adaptive Weight Predictor', 'Gemini', 'Groq'],
     points: [
-      'Developed a Retrieval-Augmented Generation (RAG) system using ChromaDB and cross-encoder reranking to retrieve relevant, non-redundant context and reduce hallucinated responses.',
-      'Improved answer faithfulness by 13.6% over a baseline vector-search pipeline using document cross-validation, reranking, and redundancy-aware retrieval.',
-      'Built a FastAPI backend with persistent chat memory, OCR-based document processing, and plug-and-play support for multiple LLM providers including Gemini, Groq, and Ollama.',
+      'Engineered a FastAPI backend with a modular, plug-and-play architecture supporting multiple LLM providers (Gemini, Groq, Ollama) and persistent chat memory across sessions.',
+      'Formulated retrieval as a multi-objective subset-selection problem optimising relevance, coverage, and inter-document support; introduced an adaptive neural weight predictor (MLP) with hybrid dense–sparse retrieval (ChromaDB + BM25).',
+      'Benchmarked against 7 baseline architectures (CRAG, Self-RAG, RAPTOR, GraphRAG) across 5 datasets, reducing context redundancy by 75.1% over Top-K while improving retrieval support by 3.1% over MMR.',
     ],
     gradient: 'linear-gradient(135deg, #1f1f1f 0%, #333333 100%)',
   },
@@ -35,11 +36,11 @@ const projectsData = [
     subtitle: 'End-to-end Machine Learning Pipeline',
     link: 'https://www.kaggle.com/code/vizzzop/churnpred',
     linkText: 'View on Kaggle',
-    tags: ['Python', 'scikit-learn', 'Gradient Boosting', 'SMOTE', 'Pandas', 'Seaborn'],
+    tags: ['Python', 'scikit-learn', 'Gradient Boosting', 'SMOTE', 'Pandas', 'Seaborn', 'Statistical Analysis'],
     points: [
-      'Compared Logistic Regression, Decision Tree, Random Forest, and Gradient Boosting models using 5-fold stratified cross-validation on the Blastchar Telco dataset (7,043 customers); Gradient Boosting achieved AUC-ROC 0.83 and 71.7% churn recall.',
-      'Engineered six domain-specific features including Customer Lifetime Value (CLV) and Charge-Per-Tenure; applied SMOTE, threshold tuning, Mutual Information, and Recursive Feature Elimination (RFE) for feature selection.',
-      'Built an end-to-end machine learning pipeline covering data preprocessing, feature engineering, model selection, hyperparameter tuning, and performance evaluation.',
+      'Developed an end-to-end machine learning pipeline with modular, reusable Python components covering data preprocessing, feature engineering, model training, and evaluation.',
+      'Compared four model architectures (Logistic Regression, Decision Tree, Random Forest, Gradient Boosting) using 5-fold stratified cross-validation on a 7,043-customer dataset; the selected Gradient Boosting model achieved AUC-ROC 0.83 and 71.7% churn recall.',
+      'Applied SMOTE, threshold tuning, and feature-selection techniques (Mutual Information, RFE) to handle class imbalance and optimize model performance.',
     ],
     gradient: 'linear-gradient(135deg, #171717 0%, #262626 100%)',
   },
@@ -104,6 +105,11 @@ const Projects = () => {
                   <a href={project.link} target="_blank" rel="noreferrer" className="project-card__link">
                     {project.link.includes('github.com') ? <FaGithub /> : <FaExternalLinkAlt />} {project.linkText}
                   </a>
+                  {project.liveDemo && (
+                    <a href={project.liveDemo} target="_blank" rel="noreferrer" className="project-card__link">
+                      <FaExternalLinkAlt /> Live Demo
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>

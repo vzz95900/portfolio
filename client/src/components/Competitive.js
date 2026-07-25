@@ -104,6 +104,10 @@ const Competitive = () => {
         >
           <ul style={{ listStyleType: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
             <li style={{ background: 'rgba(255,255,255,0.03)', padding: '24px', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
+              <h4 style={{ fontSize: '1.1rem', marginBottom: '8px', color: 'var(--accent-light)' }}>Amazon ML Summer School 2026</h4>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>Selected for Amazon's competitive machine learning training program conducted by Amazon Applied Scientists.</p>
+            </li>
+            <li style={{ background: 'rgba(255,255,255,0.03)', padding: '24px', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
               <h4 style={{ fontSize: '1.1rem', marginBottom: '8px', color: 'var(--accent-light)' }}>Deloitte Australia Data Analytics Job Simulation (Forage, 2025)</h4>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>Completed the job simulation, gaining experience in data analysis, forensic technology, and dashboard reporting.</p>
               <a href="https://drive.google.com/file/d/1vE9YLeTngRKo3CffulevKbPThBFMw9yY/view?usp=sharing" target="_blank" rel="noreferrer" style={{ display: 'inline-block', marginTop: '12px', fontSize: '0.85rem', color: 'var(--accent-light)', textDecoration: 'underline' }}>View Certificate</a>
