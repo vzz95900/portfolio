@@ -8,13 +8,14 @@ const Hero = () => {
     'SOFTWARE ENGINEERING',
     'BACKEND SYSTEMS & APIs',
     'AI/ML & RAG PIPELINES',
-    'AI AGENTS (COPILOT · CODEX · OPENCODE)',
     'ALWAYS READY TO LEARN',
     'COMPETITIVE PROGRAMMING (1000+ DSA)',
     'PYTHON · C++ · FASTAPI',
     'RAPID ADAPTABILITY',
     'HIGH OWNERSHIP',
   ];
+
+  const resumeUrl = 'https://drive.google.com/drive/folders/11bx0BKCk8-C5Z1iUCqkAW0IDyEqRVJCp?usp=sharing';
 
   return (
     <section id="hero" className="hero">
@@ -50,8 +51,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.7 }}
           >
             I'm Vijay — CS Undergrad at IIIT Kota. I engineer scalable backend systems, 
-            RESTful APIs, and end-to-end Machine Learning / RAG architectures in Python and C++, 
-            leveraging modern AI coding agents (Copilot, Codex, OpenCode) to build with speed and precision.
+            RESTful APIs, and end-to-end Machine Learning / RAG architectures in Python and C++.
           </motion.p>
 
           <motion.div
@@ -61,7 +61,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.9 }}
           >
             <a
-              href="https://drive.google.com/file/d/YOUR_RESUME_LINK/view"
+              href={resumeUrl}
               target="_blank"
               rel="noreferrer"
               className="btn btn--primary"
@@ -94,7 +94,7 @@ const Hero = () => {
                 &nbsp;&nbsp;"name": "Vijay Meena", <br />
                 &nbsp;&nbsp;"role": "Software & AI Engineer", <br />
                 &nbsp;&nbsp;"stack": ["Python", "C++", "FastAPI"], <br />
-                &nbsp;&nbsp;"ai_agents": ["Copilot", "Codex", "OpenCode"], <br />
+                &nbsp;&nbsp;"focus": "Backend Systems & RAG", <br />
                 &nbsp;&nbsp;"traits": ["Quick Learner", "High Ownership"] <br />
                 {'}'}
               </div>

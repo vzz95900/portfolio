@@ -23,13 +23,13 @@ const projectsData = [
     number: 'PROJECT 02 — 2026',
     title: 'WebProbe',
     subtitle: 'CONCURRENT WEB CRAWLER & WEBSITE HEALTH ANALYZER.',
-    desc: 'Designed and built a full-stack concurrent web crawler with async Python workers, performing simultaneous multi-page crawling with per-domain rate limiting and robots.txt compliance. Developed 14 REST API endpoints in FastAPI with an interactive React + TypeScript dashboard featuring link graph visualization (React Flow), latency histograms, and 27 automated unit tests.',
+    desc: 'Designed and built a concurrent web crawler backend with async Python workers, performing simultaneous multi-page crawling with per-domain rate limiting and robots.txt compliance. Developed 14 REST API endpoints in FastAPI handling crawl lifecycle, real-time progress tracking, link graph analytics, and latency metrics backed by 27 automated unit tests.',
     metrics: [
       { label: 'REST ENDPOINTS', value: '14' },
       { label: 'UNIT TESTS', value: '27' },
       { label: 'ARCHITECTURE', value: 'ASYNC' },
     ],
-    tags: ['PYTHON', 'FASTAPI', 'ASYNCIO', 'REACT', 'TYPESCRIPT', 'SQLITE', 'REACT FLOW'],
+    tags: ['PYTHON', 'FASTAPI', 'ASYNCIO', 'SQLITE', 'REST APIs', 'PYTEST'],
     github: 'https://github.com/vzz95900/WebProbe',
     liveDemo: 'https://webprobe.vercel.app',
     mockupUrl: 'webprobe.vercel.app',
@@ -37,16 +37,30 @@ const projectsData = [
   {
     number: 'PROJECT 03 — 2025',
     title: 'SecureFlow AI',
-    subtitle: 'PRIVACY-PRESERVING LLM CHROME EXTENSION WITH PII REDACTION.',
-    desc: 'A full-stack Chrome extension with a modular multi-stage pipeline detecting and redacting PII, PHI, and financial information before LLM API requests. Combines spaCy NER, 21 regex patterns, and fine-tuned BERT classifier with OCR-based redaction (Tesseract, PaddleOCR) and an automatic token-restoration system.',
+    subtitle: 'PRIVACY-PRESERVING LLM PIPELINE WITH PII DETECTION & REDACTION.',
+    desc: 'A modular multi-stage NLP pipeline detecting and redacting PII, PHI, and financial information before LLM API requests. Combines spaCy NER, 21 regex patterns, and fine-tuned BERT classifier with OCR-based redaction (Tesseract, PaddleOCR), CI/CD regression testing, and an automatic token-restoration system.',
     metrics: [
       { label: 'PRECISION', value: '99.4%' },
       { label: 'RECALL', value: '96.9%' },
       { label: 'ENTITY TYPES', value: '15' },
     ],
-    tags: ['PYTHON', 'SPACY', 'BERT', 'DEEP LEARNING', 'TESSERACT OCR', 'PADDLEOCR', 'CHROME APIs', 'CI/CD'],
+    tags: ['PYTHON', 'SPACY', 'BERT', 'DEEP LEARNING', 'TESSERACT OCR', 'PADDLEOCR', 'CI/CD'],
     github: 'https://github.com/vzz95900/SecureFlow-AI-Extension.git',
     mockupUrl: 'github.com / SecureFlow-AI',
+  },
+  {
+    number: 'PROJECT 04 — 2025',
+    title: 'Churn Predictor',
+    subtitle: 'END-TO-END MACHINE LEARNING PIPELINE FOR CUSTOMER CHURN PREDICTION.',
+    desc: 'Modular machine learning pipeline covering data preprocessing, feature engineering, model training, and evaluation. Compared four architectures with 5-fold stratified cross-validation on 7,043-customer dataset, handling class imbalance with SMOTE and evaluating on precision-recall trade-offs.',
+    metrics: [
+      { label: 'AUC-ROC', value: '0.83' },
+      { label: 'RECALL', value: '71.7%' },
+      { label: 'DATASET', value: '7K+' },
+    ],
+    tags: ['PYTHON', 'SCIKIT-LEARN', 'GRADIENT BOOSTING', 'SMOTE', 'PANDAS', 'NUMPY'],
+    github: 'https://www.kaggle.com/code/vizzzop/churnpred',
+    mockupUrl: 'kaggle.com / churnpred',
   },
 ];
 
@@ -83,8 +97,8 @@ const Projects = () => {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Engineering discipline across full-stack software development,
-            distributed async systems, and machine learning architectures.
+            Engineering discipline across backend systems, distributed async workers, 
+            RAG architectures, and end-to-end machine learning pipelines.
           </motion.p>
         </div>
 
@@ -95,7 +109,7 @@ const Projects = () => {
               className="project-card"
               initial={{ opacity: 0, y: 60 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.2 + 0.15 * idx, duration: 0.6 }}
+              transition={{ delay: 0.2 + 0.12 * idx, duration: 0.6 }}
             >
               <div className="project-card__info">
                 <span className="project-card__number">{project.number}</span>
@@ -135,7 +149,7 @@ const Projects = () => {
                     rel="noreferrer"
                     className="project-card__link project-card__link--outline"
                   >
-                    <FaGithub /> Code
+                    <FaGithub /> {project.github.includes('kaggle') ? 'Kaggle Notebook' : 'Code'}
                   </a>
                 </div>
               </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-scroll';
-import { FaArrowRight, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaArrowRight, FaGithub, FaLinkedin, FaEnvelope, FaFileAlt } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -27,7 +27,7 @@ const Footer = () => {
             </div>
             <p className="footer__desc">
               Software &amp; AI/ML Engineer | CS Undergrad at IIIT Kota. Specializing in 
-              scalable software architectures, full-stack systems, RAG pipelines, and algorithmic problem solving.
+              scalable backend architectures, RESTful APIs, RAG pipelines, and algorithmic problem solving.
             </p>
           </div>
 
@@ -54,6 +54,9 @@ const Footer = () => {
                 </a>
                 <a href="mailto:vijaybyadwal589@gmail.com" className="footer__nav-link">
                   <FaEnvelope style={{ marginRight: 6 }} /> Email
+                </a>
+                <a href="https://drive.google.com/drive/folders/11bx0BKCk8-C5Z1iUCqkAW0IDyEqRVJCp?usp=sharing" target="_blank" rel="noreferrer" className="footer__nav-link">
+                  <FaFileAlt style={{ marginRight: 6 }} /> Resume
                 </a>
               </div>
             </div>

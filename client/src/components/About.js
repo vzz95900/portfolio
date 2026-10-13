@@ -12,17 +12,17 @@ const traits = [
   {
     icon: <FaBrain />,
     title: 'Algorithmic Problem Solving',
-    desc: '1,000+ DSA problems solved across LeetCode, Codeforces (Specialist), and CodeChef (3★). Solid foundational logic and clean optimization skills.',
+    desc: '1,000+ DSA problems solved across LeetCode (500+), Codeforces (Specialist), and CodeChef (3★). Solid foundational logic and clean optimization in Python and C++.',
   },
   {
     icon: <FaCogs />,
     title: 'Production Engineering Mindset',
-    desc: 'Beyond notebook prototypes. From 27 automated unit tests & async workers in WebProbe to CI/CD pipelines in SecureFlow AI—I build for stability and scale.',
+    desc: 'Beyond notebook prototypes. From 27 automated unit tests & async workers in WebProbe to CI/CD pipelines in SecureFlow AI—I build for stability and maintainability.',
   },
   {
     icon: <FaUsers />,
-    title: 'High Ownership & Collaboration',
-    desc: 'Proactive communicator and dependable team player. I document decisions clearly, value feedback, and take end-to-end accountability for what ships.',
+    title: 'High Ownership & Modern Workflow',
+    desc: 'Proactive communicator and dependable team player. Fluently utilizes modern developer tooling and AI coding assistants (Copilot, Codex) as natural productivity multipliers.',
   },
 ];
 
@@ -60,8 +60,8 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             I'm a Computer Science undergraduate at <strong>IIIT Kota (2023–2027)</strong>. 
-            I build scalable software, full-stack systems, and end-to-end ML/RAG pipelines — 
-            bringing a relentless curiosity and rapid ability to absorb new technologies.
+            I engineer scalable backend systems, REST APIs, and end-to-end ML/RAG pipelines in Python and C++ — 
+            bringing relentless curiosity, algorithmic rigor, and disciplined engineering to every problem.
           </motion.p>
         </div>
 

@@ -14,9 +14,9 @@ const skillCategories = [
   {
     icon: <FaServer />,
     number: '/02',
-    title: 'Backend & Full-Stack Systems',
-    desc: 'High-concurrency servers, async workflows, and modern web interfaces.',
-    skills: ['FASTAPI', 'REACT', 'TYPESCRIPT', 'ASYNCIO', 'REST APIs', 'REACT FLOW', 'SQLITE'],
+    title: 'Backend Systems & REST APIs',
+    desc: 'High-throughput servers, async workflows, and clean RESTful API design.',
+    skills: ['FASTAPI', 'PYTHON', 'ASYNCIO', 'REST APIs', 'SQLITE', 'SYSTEM DESIGN'],
   },
   {
     icon: <FaRobot />,
@@ -50,15 +50,15 @@ const skillCategories = [
     icon: <FaCode />,
     number: '/07',
     title: 'Programming Languages',
-    desc: 'Strong fluency in statically typed and scripting languages.',
-    skills: ['PYTHON', 'C++', 'SQL', 'JAVA', 'C', 'TYPESCRIPT', 'JAVASCRIPT'],
+    desc: 'Core language proficiency across algorithmic and backend paradigms.',
+    skills: ['PYTHON', 'C++', 'SQL', 'JAVA', 'C'],
   },
   {
     icon: <FaTools />,
     number: '/08',
-    title: 'Tools & Platforms',
-    desc: 'Version control, Linux environments, and CI/CD testing pipelines.',
-    skills: ['GIT', 'GITHUB', 'LINUX', 'VS CODE', 'CI/CD', 'JUPYTER', 'KAGGLE'],
+    title: 'Developer Tools & Platforms',
+    desc: 'Version control, Linux environments, CI/CD, and modern AI coding tools.',
+    skills: ['GIT', 'GITHUB', 'LINUX', 'VS CODE', 'GITHUB COPILOT', 'AI AGENTS', 'CI/CD', 'JUPYTER'],
   },
 ];
 
@@ -95,8 +95,8 @@ const Skills = () => {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            From high-throughput backend APIs and full-stack React dashboards to ML model training
-            and RAG optimization — built on hands-on project experience.
+            From high-throughput backend APIs and database indexing to ML model training,
+            RAG pipelines, and high-efficiency AI coding agent workflows.
           </motion.p>
         </div>
 

@@ -13,8 +13,8 @@ const steps = [
   {
     icon: <FaCogs />,
     number: '02 / BUILD',
-    title: 'Build the pipeline, API, and interface together.',
-    desc: 'Backend APIs, async workers, database schemas, and frontend interfaces are engineered as one cohesive, maintainable system.',
+    title: 'Build the pipeline, API, and core architecture together.',
+    desc: 'Backend APIs, async workers, database schemas, and data pipelines are engineered as one cohesive, maintainable system.',
   },
   {
     icon: <FaShieldAlt />,
@@ -65,7 +65,7 @@ const Process = () => {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Whether it's a full-stack web application, a concurrent backend, or an ML/RAG system — I bring 
+            Whether it's a concurrent backend server, high-throughput REST APIs, or an ML/RAG system — I bring 
             engineering discipline, algorithmic fundamentals, and a relentless appetite to learn into one practical workflow.
           </motion.p>
         </div>

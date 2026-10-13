@@ -6,9 +6,9 @@ import { FaBriefcase, FaServer, FaCode, FaCertificate } from 'react-icons/fa';
 const stats = [
   {
     icon: <FaBriefcase />,
-    value: '3',
+    value: '4',
     label: 'PROJECTS SHIPPED',
-    desc: 'software & AI production builds',
+    desc: 'production software & ML builds',
     number: '01',
   },
   {
