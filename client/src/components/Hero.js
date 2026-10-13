@@ -1,110 +1,124 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { TypeAnimation } from 'react-type-animation';
 import { Link } from 'react-scroll';
-import { FaGithub, FaLinkedin, FaEnvelope, FaChevronDown } from 'react-icons/fa';
+import { FaDownload, FaEnvelope, FaCode } from 'react-icons/fa';
 
 const Hero = () => {
+  const marqueeItems = [
+    'SOFTWARE ENGINEERING',
+    'BACKEND SYSTEMS & APIs',
+    'AI/ML & RAG PIPELINES',
+    'AI AGENTS (COPILOT · CODEX · OPENCODE)',
+    'ALWAYS READY TO LEARN',
+    'COMPETITIVE PROGRAMMING (1000+ DSA)',
+    'PYTHON · C++ · FASTAPI',
+    'RAPID ADAPTABILITY',
+    'HIGH OWNERSHIP',
+  ];
+
   return (
     <section id="hero" className="hero">
       <div className="hero__content">
+        <div className="hero__left">
+          <motion.div
+            className="hero__status"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <span className="hero__status-dot" />
+            AVAILABLE FOR SOFTWARE &amp; AI ROLES
+          </motion.div>
+
+          <motion.h1
+            className="hero__heading"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+          >
+            Building software
+            <br />
+            &amp; ML systems that
+            <br />
+            scale.
+          </motion.h1>
+
+          <motion.p
+            className="hero__description"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+          >
+            I'm Vijay — CS Undergrad at IIIT Kota. I engineer scalable backend systems, 
+            RESTful APIs, and end-to-end Machine Learning / RAG architectures in Python and C++, 
+            leveraging modern AI coding agents (Copilot, Codex, OpenCode) to build with speed and precision.
+          </motion.p>
+
+          <motion.div
+            className="hero__buttons"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.9 }}
+          >
+            <a
+              href="https://drive.google.com/file/d/YOUR_RESUME_LINK/view"
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn--primary"
+            >
+              <FaDownload /> Download resume
+            </a>
+            <Link to="contact" smooth duration={500} offset={-70}>
+              <button className="btn btn--outline">
+                <FaEnvelope /> Get in touch
+              </button>
+            </Link>
+            <Link to="projects" smooth duration={500} offset={-70}>
+              <button className="btn btn--ghost">
+                <FaCode /> View projects
+              </button>
+            </Link>
+          </motion.div>
+        </div>
+
         <motion.div
-          className="hero__greeting"
-          initial={{ opacity: 0, x: -60 }}
+          className="hero__right"
+          initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <span className="hero__wave">👋</span> Hello, I'm
-        </motion.div>
-
-        <motion.h1
-          className="hero__name"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4 }}
-        >
-          Vijay <span className="gradient-text">Meena</span>
-        </motion.h1>
-
-        <motion.div
-          className="hero__typing"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
-        >
-          <TypeAnimation
-            sequence={[
-              'AI/ML Engineer',
-              2000,
-              'Backend Developer',
-              2000,
-              'Competitive Programmer',
-              2000,
-              'Problem Solver',
-              2000,
-            ]}
-            wrapper="span"
-            speed={50}
-            repeat={Infinity}
-            className="hero__typed"
-          />
-        </motion.div>
-
-        <motion.p
-          className="hero__tagline"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1 }}
-        >
-          CS Undergrad at IIIT Kota &bull; Building scalable backend systems, RESTful APIs & end-to-end ML / RAG applications
-        </motion.p>
-
-        <motion.div
-          className="hero__socials"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.2 }}
-        >
-          <a href="https://github.com/vzz95900" target="_blank" rel="noreferrer" className="hero__social-link" aria-label="GitHub">
-            <FaGithub />
-          </a>
-          <a href="https://www.linkedin.com/in/vijay-meena-a4b953292" target="_blank" rel="noreferrer" className="hero__social-link" aria-label="LinkedIn">
-            <FaLinkedin />
-          </a>
-          <a href="mailto:vijaybyadwal589@gmail.com" className="hero__social-link" aria-label="Email">
-            <FaEnvelope />
-          </a>
-        </motion.div>
-
-        <motion.div
-          className="hero__buttons"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.4 }}
-        >
-          <Link to="projects" smooth duration={500} offset={-70}>
-            <button className="btn btn--primary">View Projects</button>
-          </Link>
-          <Link to="contact" smooth duration={500} offset={-70}>
-            <button className="btn btn--outline">Get In Touch</button>
-          </Link>
+          <div className="hero__visual">
+            <div className="hero__visual-inner">
+              <div className="hero__visual-code">
+                {'{'} <br />
+                &nbsp;&nbsp;"name": "Vijay Meena", <br />
+                &nbsp;&nbsp;"role": "Software & AI Engineer", <br />
+                &nbsp;&nbsp;"stack": ["Python", "C++", "FastAPI"], <br />
+                &nbsp;&nbsp;"ai_agents": ["Copilot", "Codex", "OpenCode"], <br />
+                &nbsp;&nbsp;"traits": ["Quick Learner", "High Ownership"] <br />
+                {'}'}
+              </div>
+            </div>
+            <div className="hero__visual-badge">
+              <div className="hero__visual-badge-label">PRIMARY STACK</div>
+              <div className="hero__visual-badge-text">Software Eng · AI/ML · Python · FastAPI</div>
+            </div>
+          </div>
         </motion.div>
       </div>
 
+      {/* Marquee ticker */}
       <motion.div
-        className="hero__scroll-indicator"
+        className="marquee"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
+        transition={{ delay: 1.2, duration: 0.8 }}
       >
-        <Link to="about" smooth duration={500} offset={-70}>
-          <motion.div
-            animate={{ y: [0, 12, 0] }}
-            transition={{ repeat: Infinity, duration: 1.8 }}
-          >
-            <FaChevronDown className="hero__scroll-icon" />
-          </motion.div>
-        </Link>
+        <div className="marquee__track">
+          {[...marqueeItems, ...marqueeItems].map((item, i) => (
+            <span key={i} className="marquee__item">{item}</span>
+          ))}
+        </div>
       </motion.div>
     </section>
   );

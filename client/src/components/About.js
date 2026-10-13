@@ -1,62 +1,108 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FaBrain, FaServer, FaShieldAlt, FaCode } from 'react-icons/fa';
+import { FaGraduationCap, FaMapMarkerAlt, FaRocket, FaBrain, FaCogs, FaUsers } from 'react-icons/fa';
 
-const highlights = [
-  { icon: <FaBrain />, title: 'AI / ML', desc: 'End-to-end ML pipelines & NLP' },
-  { icon: <FaServer />, title: 'Backend & APIs', desc: 'Scalable systems & RESTful APIs' },
-  { icon: <FaShieldAlt />, title: 'Privacy AI', desc: 'PII detection & redaction' },
-  { icon: <FaCode />, title: '1000+ Problems', desc: 'LeetCode, Codeforces & CodeChef' },
+const traits = [
+  {
+    icon: <FaRocket />,
+    title: 'Ready to Learn & Adapt',
+    desc: 'High learning velocity with zero tech dogma. Deeply enthusiastic about picking up new languages, frameworks, or domain tools to tackle ambitious challenges.',
+  },
+  {
+    icon: <FaBrain />,
+    title: 'Algorithmic Problem Solving',
+    desc: '1,000+ DSA problems solved across LeetCode, Codeforces (Specialist), and CodeChef (3★). Solid foundational logic and clean optimization skills.',
+  },
+  {
+    icon: <FaCogs />,
+    title: 'Production Engineering Mindset',
+    desc: 'Beyond notebook prototypes. From 27 automated unit tests & async workers in WebProbe to CI/CD pipelines in SecureFlow AI—I build for stability and scale.',
+  },
+  {
+    icon: <FaUsers />,
+    title: 'High Ownership & Collaboration',
+    desc: 'Proactive communicator and dependable team player. I document decisions clearly, value feedback, and take end-to-end accountability for what ships.',
+  },
 ];
 
 const About = () => {
-  const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true });
-
-  const containerVariants = {
-    hidden: {},
-    visible: { transition: { staggerChildren: 0.15 } },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
+  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
 
   return (
     <section id="about" className="section about" ref={ref}>
-      <motion.div
-        className="section__container"
-        variants={containerVariants}
-        initial="hidden"
-        animate={inView ? 'visible' : 'hidden'}
-      >
-        <motion.h2 className="section__title" variants={itemVariants}>
-          <span className="gradient-text">About</span> Me
-        </motion.h2>
+      <div className="section__container">
+        <div className="about__header">
+          <motion.span
+            className="section-badge"
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5 }}
+          >
+            <FaRocket /> ABOUT &amp; ENGINEERING MINDSET
+          </motion.span>
+          <motion.h2
+            className="section__title"
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            Curious engineer.
+            <br />
+            Fast learner.
+            <br />
+            Built to ship.
+          </motion.h2>
+          <motion.p
+            className="section__subtitle"
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            I'm a Computer Science undergraduate at <strong>IIIT Kota (2023–2027)</strong>. 
+            I build scalable software, full-stack systems, and end-to-end ML/RAG pipelines — 
+            bringing a relentless curiosity and rapid ability to absorb new technologies.
+          </motion.p>
+        </div>
 
-        <motion.p className="about__text" variants={itemVariants}>
-          I'm a Computer Science undergraduate at <strong>IIIT Kota (2023–2027)</strong> with strong 
-          foundations in Data Structures &amp; Algorithms and Object-Oriented Design, and hands-on experience 
-          building <strong>scalable backend systems</strong>, <strong>RESTful APIs</strong>, and end-to-end 
-          <strong>Machine Learning / RAG applications</strong> in Python and C++.
-        </motion.p>
-
-        <motion.div className="about__highlights" variants={containerVariants}>
-          {highlights.map((item, i) => (
+        {/* Core Principles & Strengths */}
+        <div className="about__traits-grid">
+          {traits.map((trait, i) => (
             <motion.div
               key={i}
-              className="about__card"
-              variants={itemVariants}
-              whileHover={{ y: -8, boxShadow: '0 12px 40px rgba(255,255,255,0.05)' }}
+              className="about__trait-card"
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.2 + 0.1 * i, duration: 0.5 }}
             >
-              <div className="about__card-icon">{item.icon}</div>
-              <h3>{item.title}</h3>
-              <p>{item.desc}</p>
+              <div className="about__trait-icon">{trait.icon}</div>
+              <h3 className="about__trait-title">{trait.title}</h3>
+              <p className="about__trait-desc">{trait.desc}</p>
             </motion.div>
           ))}
+        </div>
+
+        {/* Education & Location summary bar */}
+        <motion.div
+          className="about__footer-bar"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.65, duration: 0.5 }}
+        >
+          <div className="about__footer-item">
+            <FaGraduationCap className="about__footer-icon" />
+            <div>
+              <strong>IIIT Kota</strong> — B.Tech Computer Science and Engineering (2023–2027)
+            </div>
+          </div>
+          <div className="about__footer-item">
+            <FaMapMarkerAlt className="about__footer-icon" />
+            <div>
+              Jaipur / Kota, Rajasthan, India
+            </div>
+          </div>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 };

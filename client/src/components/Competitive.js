@@ -104,7 +104,10 @@ const Competitive = () => {
         >
           <ul style={{ listStyleType: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '20px' }}>
             <li style={{ background: 'rgba(255,255,255,0.03)', padding: '24px', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
-              <h4 style={{ fontSize: '1.1rem', marginBottom: '8px', color: 'var(--accent-light)' }}>Amazon ML Summer School 2026</h4>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px', marginBottom: '8px' }}>
+                <h4 style={{ fontSize: '1.1rem', margin: 0, color: 'var(--accent-light)' }}>Amazon ML Summer School 2026</h4>
+                <a href="https://drive.google.com/file/d/1Dac4SLLbdD9nIUKUSHQ9FYlM8LmlKvDD/view?usp=drive_link" target="_blank" rel="noreferrer" style={{ fontSize: '0.85rem', color: 'var(--accent-light)', textDecoration: 'underline' }}>View Certificate</a>
+              </div>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '8px' }}>Selected among <strong>3,000 of 1,34,421 applicants</strong> nationwide (~<strong>2.2% acceptance rate</strong>) through an SOP/resume screening round followed by a proctored coding and aptitude test.</p>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>Completed all <strong>9 modules</strong> — Supervised Learning, Deep Neural Networks, Dimensionality Reduction, Unsupervised Learning, Sequential Models, Reinforcement Learning, Generative AI & LLMs, Causal Inference, and <strong>Agentic AI</strong> (bonus module) — taught by Amazon Applied Scientists through real-world case studies.</p>
             </li>

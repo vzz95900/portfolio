@@ -2,9 +2,11 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
-import Education from './components/Education';
+import Stats from './components/Stats';
 import Skills from './components/Skills';
+import Process from './components/Process';
 import Projects from './components/Projects';
+import Education from './components/Education';
 import Competitive from './components/Competitive';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -19,9 +21,11 @@ function App() {
       <Navbar />
       <Hero />
       <About />
-      <Education />
+      <Stats />
       <Skills />
+      <Process />
       <Projects />
+      <Education />
       <Competitive />
       <Contact />
       <Footer />
