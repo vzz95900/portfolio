@@ -53,6 +53,28 @@ const sendNotificationEmail = async ({ name, email, subject, message }) => {
     `,
   };
 
+  // 1. If RESEND_API_KEY is provided, use Resend over HTTPS (Port 443 — works 100% on Render!)
+  const resendApiKey = (process.env.RESEND_API_KEY || '').trim();
+  if (resendApiKey) {
+    console.log('[Email] Sending via Resend HTTPS API (Port 443)...');
+    const resend = new Resend(resendApiKey);
+    const result = await resend.emails.send({
+      from: 'Portfolio Contact <onboarding@resend.dev>',
+      to: user,
+      replyTo: email,
+      reply_to: email,
+      subject: `📬 New Portfolio Message${subject ? `: ${subject}` : ''}`,
+      html: mailOptions.html,
+    });
+
+    if (result.error) {
+      throw new Error(`Resend error: ${result.error.message || JSON.stringify(result.error)}`);
+    }
+
+    console.log('✅ Email delivered successfully via Resend API:', result.data?.id);
+    return result;
+  }
+
   // Attempt 1: Port 587 with IPv4 (most reliable on cloud containers)
   try {
     console.log('[Email] Trying Nodemailer via port 587 (IPv4)...');
