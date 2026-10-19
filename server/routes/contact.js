@@ -64,6 +64,12 @@ router.post('/', async (req, res) => {
       return res.status(400).json({ error: 'Name, email, and message are required.' });
     }
 
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({ error: 'Please enter a valid email address.' });
+    }
+
     // Save to database
     const newMessage = await Message.create({ name, email, subject, message });
 

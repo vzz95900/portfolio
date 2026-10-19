@@ -16,6 +16,14 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Client-side email format check
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(form.email)) {
+      setStatus('invalid-email');
+      return;
+    }
+
     setStatus('sending');
 
     try {
@@ -30,7 +38,8 @@ const Contact = () => {
         setForm({ name: '', email: '', subject: '', message: '' });
         setTimeout(() => setStatus(''), 4000);
       } else {
-        setStatus('error');
+        const data = await res.json().catch(() => null);
+        setStatus(data?.error || 'error');
       }
     } catch {
       setStatus('error');
@@ -157,16 +166,25 @@ const Contact = () => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
               >
-                Message sent successfully!
+                Thank you for reaching out! I'll get back to you via email soon.
               </motion.p>
             )}
-            {status === 'error' && (
+            {status === 'invalid-email' && (
               <motion.p
                 className="contact__status contact__status--error"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
               >
-                Something went wrong. Please try again.
+                Please enter a valid email address.
+              </motion.p>
+            )}
+            {(status === 'error' || (status && status !== 'success' && status !== 'invalid-email' && status !== 'sending')) && (
+              <motion.p
+                className="contact__status contact__status--error"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+              >
+                {status === 'error' ? 'Something went wrong. Please try again.' : status}
               </motion.p>
             )}
           </motion.form>
