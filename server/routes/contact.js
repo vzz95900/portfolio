@@ -3,20 +3,30 @@ const router = express.Router();
 const nodemailer = require('nodemailer');
 const Message = require('../models/Message');
 
-// Configure Nodemailer transporter
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
-
 // Helper: send email notification
 const sendNotificationEmail = async ({ name, email, subject, message }) => {
+  const user = (process.env.EMAIL_USER || '').trim();
+  const pass = (process.env.EMAIL_PASS || '').replace(/\s+/g, '');
+
+  if (!user || !pass) {
+    console.warn('⚠️ Email notification skipped: EMAIL_USER or EMAIL_PASS is not configured.');
+    return;
+  }
+
+  const transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 587,
+    secure: false, // TLS via STARTTLS
+    family: 4,     // Force IPv4 to prevent IPv6 connection timeouts on Render
+    auth: { user, pass },
+    connectionTimeout: 10000, // 10s connection timeout
+    greetingTimeout: 10000,
+    socketTimeout: 10000,
+  });
+
   const mailOptions = {
-    from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
-    to: process.env.EMAIL_USER,
+    from: `"Portfolio Contact" <${user}>`,
+    to: user,
     replyTo: email,
     subject: `📬 New Portfolio Message${subject ? `: ${subject}` : ''}`,
     html: `
@@ -52,7 +62,9 @@ const sendNotificationEmail = async ({ name, email, subject, message }) => {
     `,
   };
 
-  await transporter.sendMail(mailOptions);
+  const info = await transporter.sendMail(mailOptions);
+  console.log('✅ Email notification sent successfully:', info.messageId);
+  return info;
 };
 
 // POST /api/contact
@@ -70,13 +82,7 @@ router.post('/', async (req, res) => {
       return res.status(400).json({ error: 'Please enter a valid email address.' });
     }
 
-    // Email is the priority — always try to send it
-    const emailPromise = sendNotificationEmail({ name, email, subject, message }).catch((err) => {
-      console.error('Email notification failed:', err.message);
-      return { failed: true };
-    });
-
-    // Try saving to MongoDB (may fail if cluster is paused)
+    // Try saving to MongoDB
     let dbSaved = false;
     try {
       await Message.create({ name, email, subject, message });
@@ -85,17 +91,26 @@ router.post('/', async (req, res) => {
       console.error('MongoDB save failed (cluster may be paused):', dbErr.message);
     }
 
-    // Wait for email result
-    const emailResult = await emailPromise;
-    const emailSent = !emailResult?.failed;
+    // If MongoDB save succeeded, respond to the visitor immediately!
+    // They will NEVER be stuck on "Sending..."
+    if (dbSaved) {
+      res.status(201).json({ success: true });
 
-    // Succeed if at least one delivery method worked
-    if (emailSent || dbSaved) {
-      return res.status(201).json({ success: true });
+      // Send the email notification in the background
+      sendNotificationEmail({ name, email, subject, message }).catch((err) => {
+        console.error('Email notification failed:', err.message);
+      });
+      return;
     }
 
-    // Both failed — this is the only real failure case
-    res.status(500).json({ error: 'Server error. Please try again later.' });
+    // Fallback: If MongoDB failed (cluster paused), try delivering via email
+    try {
+      await sendNotificationEmail({ name, email, subject, message });
+      return res.status(201).json({ success: true });
+    } catch (emailErr) {
+      console.error('Email fallback delivery failed:', emailErr.message);
+      return res.status(500).json({ error: 'Server error. Please try again later.' });
+    }
   } catch (err) {
     console.error('Contact error:', err);
     res.status(500).json({ error: 'Server error. Please try again later.' });
