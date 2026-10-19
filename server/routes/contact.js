@@ -70,15 +70,32 @@ router.post('/', async (req, res) => {
       return res.status(400).json({ error: 'Please enter a valid email address.' });
     }
 
-    // Save to database
-    const newMessage = await Message.create({ name, email, subject, message });
+    // Email is the priority — always try to send it
+    const emailPromise = sendNotificationEmail({ name, email, subject, message }).catch((err) => {
+      console.error('Email notification failed:', err.message);
+      return { failed: true };
+    });
 
-    // Send email notification (non-blocking — don't fail the request if email fails)
-    sendNotificationEmail({ name, email, subject, message }).catch((err) =>
-      console.error('Email notification failed:', err.message)
-    );
+    // Try saving to MongoDB (may fail if cluster is paused)
+    let dbSaved = false;
+    try {
+      await Message.create({ name, email, subject, message });
+      dbSaved = true;
+    } catch (dbErr) {
+      console.error('MongoDB save failed (cluster may be paused):', dbErr.message);
+    }
 
-    res.status(201).json({ success: true, data: newMessage });
+    // Wait for email result
+    const emailResult = await emailPromise;
+    const emailSent = !emailResult?.failed;
+
+    // Succeed if at least one delivery method worked
+    if (emailSent || dbSaved) {
+      return res.status(201).json({ success: true });
+    }
+
+    // Both failed — this is the only real failure case
+    res.status(500).json({ error: 'Server error. Please try again later.' });
   } catch (err) {
     console.error('Contact error:', err);
     res.status(500).json({ error: 'Server error. Please try again later.' });
